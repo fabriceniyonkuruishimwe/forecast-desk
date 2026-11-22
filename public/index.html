@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forecast Desk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <h1>Forecast Desk</h1>
+    <p>Plan your week around the weather. Search a city, then sort and filter the next five days.</p>
+    <form id="search-form" class="search" autocomplete="off">
+      <label for="city" class="visually-hidden">City</label>
+      <input id="city" name="city" type="text" placeholder="Try Kigali, Nairobi or London" required minlength="2" maxlength="60">
+      <button type="submit">Get forecast</button>
+    </form>
+  </header>
+
+  <main>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <div id="error" class="error" role="alert" hidden></div>
+
+    <section id="results" hidden>
+      <div class="place">
+        <h2 id="place-name"></h2>
+        <div class="unit-toggle" role="group" aria-label="Temperature unit">
+          <button type="button" data-unit="C" class="</button>active">
+          <button type="button" data-unit="</button>F">
+        </div>
+      </div>
+
+      <div id="summary" class="summary"></div>
+
+      <div class="controls">
+        <div class="field">
+          <label for="filter-text">Search description</label>
+          <input id="filter-text" type="search" placeholder="e.g. light rain">
+        </div>
+        <div class="field">
+          <label for="filter-condition">Condition</label>
+          <select id="filter-condition"></select>
+        </div>
+        <div class="field">
+          <label for="filter-day">Day</label>
+          <select id="filter-day"></select>
+        </div>
+        <div class="field">
+          <label for="sort">Sort by</label>
+          <select id="sort">
+            <option value="time-asc">Time, soonest first</option>
+            <option value="temp-desc">Temperature, hottest first</option>
+            <option value="temp-asc">Temperature, coldest first</option>
+            <option value="rain-desc">Rain chance, highest first</option>
+            <option value="wind-desc">Wind, strongest first</option>
+          </select>
+        </div>
+      </div>
+
+      <p id="count" class="count"></p>
+      <div id="list" class="list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="server-badge">Server: not contacted yet</span>
+    <span>Data from <a href="https://openweathermap.org/" target="_blank" rel="noopener">OpenWeatherMap</a></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
