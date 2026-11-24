@@ -46,7 +46,7 @@ body {
   letter-spacing: -0.02em;
 }
 
-.masthead p { margin-top: 0; margin-bottom: 1.25rem; max-width: 60ch; }
+.masthead p { margin-top: 0; margin-bottom: 1.25rem; max-width: 920px; }
 
 .search { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 

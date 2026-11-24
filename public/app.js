@@ -21,7 +21,7 @@ function toUnit(celsius) {
 }
 
 function formatTemp(celsius) {
-  return `${Math.round(toUnit({state.unit}`;celsius))}
+  return `${Math.round(toUnit(celsius))}°${state.unit}`;
 }
 
 function localDate(item) {
