@@ -119,3 +119,7 @@ Failover test: run `pm2 stop forecast-desk` on Web01, repeat the loop (all respo
 ## Author
 
 Niyonkuru Ishimwe Fabrice
+
+## Notes
+
+- Lb01 came with HAProxy already listening on port 80. It was stopped and disabled (`sudo systemctl stop haproxy && sudo systemctl disable haproxy`) so Nginx could use the port.
