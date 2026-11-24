@@ -3,9 +3,9 @@
 A web app that shows a 5-day, 3-hour-step weather forecast for any city so people can plan trips, commutes, farming work, events or outdoor sport around the weather. Users can search a city, then sort, filter and search the forecast, switch  , and see summary stats such as the warmest period and the highest chance of rain.and between 
 
 - Demo video: PASTE_VIDEO_LINK_HERE
-- Load balancer URL: http://LB01_IP
-- Web01: http://WEB01_IP
-- Web02: http://WEB02_IP
+- Load balancer URL: http://18.169.172.163
+- Web01: http://3.9.170.8
+- Web02: http://18.134.244.108
 
 No login is needed to use the app.
 
@@ -81,7 +81,7 @@ sudo apt update
 sudo apt install -y nginx
 ```
 
-Copy `deploy/lb-nginx.conf` to `/etc/nginx/sites-available/forecast-lb`, replace `WEB01_IP` and `WEB02_IP` with the real addresses, then:
+Copy `deploy/lb-nginx.conf` to `/etc/nginx/sites-available/forecast-lb`, replace `3.9.170.8` and `18.134.244.108` with the real addresses, then:
 
 ```bash
 sudo ln -sf /etc/nginx/sites-available/forecast-lb /etc/nginx/sites-enabled/forecast-lb
@@ -101,7 +101,7 @@ What the configuration does:
 ## Test the load balancer
 
 ```bash
-for i in 1 2 3 4 5 6; do curl -s -D - -o /dev/null http://LB01_IP/health | grep -i x-served-by; done
+for i in 1 2 3 4 5 6; do curl -s -D - -o /dev/null http://18.169.172.163/health | grep -i x-served-by; done
 ```
 
 The output alternates between the Web01 and Web02 hostnames. In the browser, reload the page and watch the footer text `Server: ...` change.
