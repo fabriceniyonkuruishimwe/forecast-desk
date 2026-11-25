@@ -2,7 +2,7 @@
 
 A web app that shows a 5-day, 3-hour-step weather forecast for any city so people can plan trips, commutes, farming work, events or outdoor sport around the weather. Users can search a city, then sort, filter and search the forecast, switch  , and see summary stats such as the warmest period and the highest chance of rain.and between 
 
-- Demo video: PASTE_VIDEO_LINK_HERE
+- Demo video: https://youtu.be/W2RLHNltIlM
 - Load balancer URL: http://18.169.172.163
 - Web01: http://3.9.170.8
 - Web02: http://18.134.244.108
